@@ -66,13 +66,13 @@
             const theme = fashionThemes[name] || { class: "unknown", text: "🌍 Unknown Style" };
 
             const marker = L.marker([lat, lng]).addTo(map);
-            marker.bindPopup(<b>${name}</b><br>${theme.text}).openPopup();
+            marker.bindPopup(`<b>${name}</b><br>${theme.text}`).openPopup();
 
             // Change the theme color based on country
             marker.on('click', () => {
                 const themeElement = document.getElementById("theme");
-                themeElement.className = theme ${theme.class};
-                themeElement.innerHTML = Fashion Theme: ${theme.text};
+                themeElement.className = `theme ${theme.class}`;
+                themeElement.innerHTML = `Fashion Theme: ${theme.text}`;
             });
         });
 
